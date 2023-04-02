@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.Liste
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setTheme(androidx.appcompat.R.style.Theme_AppCompat_Light);
         setContentView(binding.getRoot());
         configureRecyclerView();
         configureViewModel();
