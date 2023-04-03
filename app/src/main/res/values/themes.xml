@@ -12,7 +12,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="Theme.Localstorage.light" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
     <!-- STYLE FOR MAIN ACTIVITY -->
     <style name="AppTheme.NoTitle" parent="AppTheme">
         <item name="windowNoTitle">true</item>
@@ -20,4 +24,7 @@
         <item name="actionBarTheme">@null</item>
     </style>
 
+    <style name="EditTextDialogBox" parent="AppTheme">
+        <item name="android:layout_margin">20dp</item>
+    </style>
 </resources>

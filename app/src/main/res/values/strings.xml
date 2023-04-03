@@ -1,20 +1,9 @@
 <resources>
-    <string name="app_name">SaveMyTrip</string>
+    <string name="app_name">to-do-list-app</string>
     <string name="main_activity_description">Organise ton voyage de manière&#8230; totalement déconnectée !</string>
 
-    <!-- COMMON -->
-    <string name="title_trip_book">Carnet de voyage</string>
-    <string name="title_todo_list">Choses à faire</string>
-    <string name="title_permission">Cette application a besoin de permission pour fonctionner</string>
-    <string name="error_happened">Une erreur s\'est produite !</string>
-
-    <!-- TRIP BOOK ACTIVITY -->
-    <string name="saved">Enregistré</string>
-    <string name="external_storage_impossible_create_file">Impossible de créer un fichier sur l\'espace de stockage externe</string>
-
-    <string name="question_storage_writing">Dans quel stockage souhaitez-vous écrire ?</string>
-    <string name="question_storage_writing_external">Externe</string>
-    <string name="question_storage_writing_internal">Interne</string>
+    <string name="question_storage_writing_external">Local</string>
+    <string name="question_storage_writing_internal">Remote</string>
 
     <string name="question_storage_privacy">Quel niveau de confidentialité souhaitez-vous ?</string>
     <string name="question_storage_privacy_private">Privé</string>

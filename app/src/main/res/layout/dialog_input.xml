@@ -8,6 +8,7 @@
         android:id="@+id/input_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter item new title"/>
+        android:hint="Enter item new title"
+        android:layout_margin="10dp"/>
 
 </LinearLayout>
