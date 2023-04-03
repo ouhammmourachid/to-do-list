@@ -2,11 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- ENABLE PERMISSIONS ABOUT EXTERNAL STORAGE ACCESS -->
+    <!-- ENABLE PERMISSIONS ABOUT INTERNET ACCESS -->
 
     <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
+        android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -14,6 +13,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.Localstorage"
         tools:targetApi="31">

@@ -10,7 +10,7 @@ import com.ouhamou.to_do_list.models.Item;
 
 @Database(
         entities = {Item.class},
-        version = 2,
+        version = 3,
         exportSchema = false
 )
 public abstract class SaveMyTripDatabase extends RoomDatabase {
@@ -36,6 +36,7 @@ public abstract class SaveMyTripDatabase extends RoomDatabase {
             synchronized (SaveMyTripDatabase.class){
                 if(instance == null){
                     instance = Room.databaseBuilder(context.getApplicationContext(),SaveMyTripDatabase.class,"MyDatabase.db")
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }
