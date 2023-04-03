@@ -1,17 +1,17 @@
 package com.ouhamou.to_do_list;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.ouhamou.to_do_list.adapters.ItemAdapter;
 import com.ouhamou.to_do_list.adapters.ItemViewModel;
@@ -67,6 +67,17 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.Liste
         binding.todoListActivityButtonAdd.setOnClickListener(view -> {
             createItem();
         });
+        CompoundButton.OnCheckedChangeListener checkedChangeListener = (button, isChecked) -> {
+            if (isChecked) {
+                int id = button.getId();
+                if (id == R.id.main_activity_local_storage) {
+                    // TODO : handle Local storage.
+                } else if (id == R.id.main_activity_remote_storage) {
+                    // TODO :handle Remote storage.
+                }
+            }
+            // TODO :read from the selected storage.
+        };
 
     }
 
@@ -99,11 +110,12 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.Liste
     public void onItemLogClick(Item item) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         final EditText input = new EditText(this);
+        input.setTextAppearance(this,R.style.EditTextDialogBox);
         builder.setView(input);
         input.setText(item.getText());
         builder.setTitle("update Item");
-        builder.setMessage("Message in Dialog Box");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setMessage("please click on save to update your item");
+        builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 item.setText(input.getText().toString());

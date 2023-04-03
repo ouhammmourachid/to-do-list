@@ -10,7 +10,7 @@ import com.ouhamou.to_do_list.models.Item;
 
 @Database(
         entities = {Item.class},
-        version = 1,
+        version = 2,
         exportSchema = false
 )
 public abstract class SaveMyTripDatabase extends RoomDatabase {

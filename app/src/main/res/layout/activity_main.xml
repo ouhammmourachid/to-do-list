@@ -5,12 +5,34 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="30dp"
+        android:id="@+id/main_activity_type_storage_radio_box"
+        >
+        <RadioButton android:id="@+id/main_activity_local_storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/question_storage_writing_external"
+            android:textSize="@dimen/default_text_size"/>
+
+        <RadioButton android:id="@+id/main_activity_remote_storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/question_storage_writing_internal"
+            android:textSize="@dimen/default_text_size"/>
+    </RadioGroup>
 
     <!-- RECYCLER VIEW -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/todo_list_activity_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/main_activity_type_storage_radio_box"
         android:layout_above="@id/todo_list_activity_relative_layout_bottom" />
 
     <RelativeLayout
