@@ -6,13 +6,24 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 @Entity
 public class Item {
     @PrimaryKey(autoGenerate = true)
+    @SerializedName("id")
+    @Expose
     private long id;
+    @SerializedName("text")
+    @Expose
     private String text;
+    @SerializedName("category")
+    @Expose
     private int category;
-    private boolean isSelected;
+    @SerializedName("selected")
+    @Expose
+    private boolean selected;
 
     public Item() {
     }
@@ -20,7 +31,7 @@ public class Item {
     public Item(String text, int category) {
         this.text = text;
         this.category = category;
-        this.isSelected = false;
+        this.selected = false;
     }
 
     public long getId() {
@@ -48,11 +59,11 @@ public class Item {
     }
 
     public boolean isSelected() {
-        return isSelected;
+        return selected;
     }
 
     public void setSelected(boolean selected) {
-        isSelected = selected;
+        selected = selected;
     }
 
 

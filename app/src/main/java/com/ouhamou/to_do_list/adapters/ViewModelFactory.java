@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.ouhamou.to_do_list.api.ItemService;
+import com.ouhamou.to_do_list.api.ItemStreams;
 import com.ouhamou.to_do_list.database.ItemDataRepository;
 import com.ouhamou.to_do_list.database.SaveMyTripDatabase;
 
@@ -13,13 +15,14 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class ViewModelFactory implements ViewModelProvider.Factory {
-    private final ItemDataRepository itemdataSource;
+    private final ItemDataRepository itemDataSource;
     private final Executor executor;
+
     private static ViewModelFactory factory;
 
     public ViewModelFactory(Context context) {
         SaveMyTripDatabase database = SaveMyTripDatabase.getInstance(context);
-        itemdataSource = new ItemDataRepository(database.itemDao());
+        itemDataSource = new ItemDataRepository(database.itemDao());
         executor = Executors.newSingleThreadExecutor();
     }
 
@@ -38,7 +41,7 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if(modelClass.isAssignableFrom(ItemViewModel.class)){
-            return (T) new ItemViewModel(itemdataSource,executor);
+            return (T) new ItemViewModel(itemDataSource, executor);
         }
         throw new IllegalArgumentException("UnKnown ViewModel class");
     }
