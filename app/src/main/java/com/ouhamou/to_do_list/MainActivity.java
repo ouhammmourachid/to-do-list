@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.ouhamou.to_do_list.adapters.ItemAdapter;
 import com.ouhamou.to_do_list.adapters.ItemViewModel;
+import com.ouhamou.to_do_list.adapters.StorageType;
 import com.ouhamou.to_do_list.adapters.ViewModelFactory;
 import com.ouhamou.to_do_list.databinding.ActivityMainBinding;
 import com.ouhamou.to_do_list.models.Item;
@@ -72,14 +73,15 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.Liste
             if (isChecked) {
                 int id = button.getId();
                 if (id == R.id.main_activity_local_storage) {
-                    // TODO : handle Local storage.
+                    itemViewModel.setStorageType(StorageType.LOCAL_STORAGE);
                 } else if (id == R.id.main_activity_remote_storage) {
-                    // TODO :handle Remote storage.
+                    itemViewModel.setStorageType(StorageType.REMOTE_STORAGE);
                 }
             }
-            // TODO :read from the selected storage.
+            getItems();
         };
-
+    binding.mainActivityLocalStorage.setOnCheckedChangeListener(checkedChangeListener);
+    binding.mainActivityRemoteStorage.setOnCheckedChangeListener(checkedChangeListener);
     }
 
     private void configureSpinner() {
