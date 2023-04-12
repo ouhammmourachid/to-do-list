@@ -26,7 +26,7 @@ public interface ItemService {
     @DELETE("item/{itemId}/")
     Observable<String> deleteItem(@Path("itemId") Long itemId);
     public static final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.171:8080/api/v1/")
+            .baseUrl("http://<IP_ADRESSE>:8080/api/v1/")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build();
